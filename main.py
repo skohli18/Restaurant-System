@@ -1,17 +1,16 @@
-from curses.ascii import isdigit
 from tkinter import *
 import random 
 import time
 
 root = Tk()
 root.geometry("1200x700")
-root.title("KOHLI'S RESTAURANT")
+root.title("Restaurant Management System")
 frame = Frame(root)
 frame.grid(row = 0, column = 0)
 frame2 = Frame(root)
 frame2.grid(row = 10, column = 0)
 frame3 = Frame(root)
-frame3.grid(row = 80, column = 0)
+frame3.grid(row = 35, column = 0)
 frame4 = Frame(root)
 frame4.grid(row = 30, column = 150)
 frame5 = Frame(root)
@@ -19,20 +18,20 @@ frame5.grid(row = 50, column = 150)
 frame6 = Frame(root)
 frame6.grid(row = 70, column = 150)
 frame7 = Frame(root)
-frame7.grid(row = 90, column = 150)
+frame7.grid(row = 71, column = 150)
 frame8 = Frame(root)
-frame8.grid(row = 110, column = 150)
+frame8.grid(row = 72, column = 150)
 frame9 = Frame(root)
 frame9.grid(row = 0, column = 0)
 
-title = Label(frame, text = "K O H L I ' S    R E S T A U R A N T", font = "Impact 30")
+title = Label(frame, text = "Restaurant Management System", font = "Times 30 bold")
 title.grid(row = 0, column = 100)
 
-localTime = localtime=time.asctime(time.localtime(time.time())) 
-date = Label(frame, text = localTime, font = "Meiryo 24")
+localTime = localtime=time.asctime(time.localtime(time.time())) #study this line
+date = Label(frame, text = localTime, font = "Times 24")
 date.grid(row = 10, column = 100)
 
-orderNumber = Label(frame2, text = "Order Number: ", font = "Meiryo 14")
+orderNumber = Label(frame2, text = "Order Number: ", font = "Times 14")
 orderNumber.grid(row = 10, column = 0)
 
 orderVar = StringVar()
@@ -40,7 +39,7 @@ orderVar = StringVar()
 orderEntry = Entry(frame2, textvariable = orderVar)
 orderEntry.grid(row = 10, column = 10)
 
-fries = Label(frame2, text = "Number of fries: ", font = "Meiryo 14")
+fries = Label(frame2, text = "Number of fries: ", font = "Times 14")
 fries.grid(row = 20, column = 0)
 
 friesVar = StringVar()
@@ -49,16 +48,16 @@ friesVar.set("0")
 friesEntry = Entry(frame2, textvariable = friesVar)
 friesEntry.grid(row = 20, column = 10)
 
-cheesePizza = Label(frame2, text = "Number of cheese pizzas", font = "Meiryo 14")
-cheesePizza.grid(row = 30, column = 0)
+lunchCombo = Label(frame2, text = "Number of lunch combos: ", font = "Times 14")
+lunchCombo.grid(row = 30, column = 0)
 
-cheesePizzaVar = StringVar()
-cheesePizzaVar.set("0")
+lunchComboVar = StringVar()
+lunchComboVar.set("0")
 
-cheesePizzaEntry = Entry(frame2, textvariable = cheesePizzaVar)
-cheesePizzaEntry.grid(row = 30, column = 10)
+lunchComboEntry = Entry(frame2, textvariable = lunchComboVar)
+lunchComboEntry.grid(row = 30, column = 10)
 
-burger = Label(frame2, text = "Number of burgers: ", font = "Meiryo 14")
+burger = Label(frame2, text = "Number of burgers: ", font = "Times 14")
 burger.grid(row = 40, column = 0)
 
 burgerVar = StringVar()
@@ -67,7 +66,7 @@ burgerVar.set("0")
 burgerEntry = Entry(frame2, textvariable = burgerVar)
 burgerEntry.grid(row = 40, column = 10)
 
-pizza = Label(frame2, text = "Number of pizzas: ", font = "Meiryo 14")
+pizza = Label(frame2, text = "Number of pizzas: ", font = "Times 14")
 pizza.grid(row = 50, column = 0)
 
 pizzaVar = StringVar()
@@ -76,7 +75,7 @@ pizzaVar.set("0")
 pizzaEntry = Entry(frame2, textvariable = pizzaVar)
 pizzaEntry.grid(row = 50, column = 10)
 
-cheeseBurger = Label(frame2, text = "Number of cheeseburgers: ", font = "Meiryo 14")
+cheeseBurger = Label(frame2, text = "Number of cheeseburgers: ", font = "Times 14")
 cheeseBurger.grid(row = 60, column = 0)
 
 cheeseBurgerVal = StringVar()
@@ -85,7 +84,7 @@ cheeseBurgerVal.set("0")
 cheeseBurgerEntry = Entry(frame2, textvariable = cheeseBurgerVal)
 cheeseBurgerEntry.grid(row = 60, column =10)
 
-drinks = Label(frame2, text = "Number of drinks: ", font = "Meiryo 14")
+drinks = Label(frame2, text = "Number of drinks: ", font = "Times 14")
 drinks.grid(row = 10, column = 50)
 
 drinksVar = StringVar()
@@ -94,7 +93,7 @@ drinksVar.set("0")
 drinksEntry = Entry(frame2, textvariable=drinksVar)
 drinksEntry.grid(row = 10, column = 60)
 
-cost = Label(frame2, text = "Cost: ", font = "Meiryo 14")
+cost = Label(frame2, text = "Cost: ", font = "Times 14")
 cost.grid(row = 20, column = 50)
 
 costVar= StringVar()
@@ -102,7 +101,7 @@ costVar= StringVar()
 costEntry = Entry(frame2, textvariable=costVar)
 costEntry.grid(row = 20, column = 60)
 
-serviceCharge = Label(frame2, text = "Service charge: ", font = "Meiryo 14")
+serviceCharge = Label(frame2, text = "Service charge: ", font = "Times 14")
 serviceCharge.grid(row = 30, column = 50)
 
 serviceChargeVar = StringVar()
@@ -110,7 +109,7 @@ serviceChargeVar = StringVar()
 serviceChargeEntry = Entry(frame2, textvariable=serviceChargeVar)
 serviceChargeEntry.grid(row = 30, column = 60)
 
-tax = Label(frame2, text = "Tax: ", font = "Meiryo 14")
+tax = Label(frame2, text = "Tax: ", font = "Times 14")
 tax.grid(row = 40, column = 50)
 
 taxVar = StringVar()
@@ -118,7 +117,7 @@ taxVar = StringVar()
 taxEntry= Entry(frame2, textvariable=taxVar)
 taxEntry.grid(row = 40, column = 60)
 
-subTotal = Label(frame2, text = "Subtotal: ", font = "Meiryo 14")
+subTotal = Label(frame2, text = "Subtotal: ", font = "Times 14")
 subTotal.grid(row = 50, column = 50)
 
 subTotalVar = StringVar()
@@ -126,7 +125,7 @@ subTotalVar = StringVar()
 subTotalEntry= Entry(frame2, textvariable=taxVar)
 subTotalEntry.grid(row = 50, column = 60)
 
-total = Label(frame2, text = "Total: ", font = "Meiryo 14")
+total = Label(frame2, text = "Total: ", font = "Times 14")
 total.grid(row = 60, column = 50)
 
 totalVar= StringVar()
@@ -140,21 +139,21 @@ def ref():
     orderVar.set(randomRef)
     
     costOfFries = float(friesVar.get())
-    costOfCheesePizza = float(cheesePizzaVar.get())
+    costOfLunchCombo = float(lunchComboVar.get())
     costOfBurger = float(burgerVar.get())
     costOfPizza = float(pizzaVar.get())
     costOfCheeseBurger = float(cheeseBurgerVal.get())
     costOfDrinks = float(drinksVar.get())
     
     costOfFries = costOfFries * 2.5
-    costOfCheesePizza = costOfCheesePizza * 6.5
+    costOfLunchCombo = costOfLunchCombo * 6.5
     costOfBurger = costOfBurger * 4.5
     costOfPizza = costOfPizza * 7.5
     costOfCheeseBurger = costOfCheeseBurger * 5
     costOfDrinks = costOfDrinks * 2
     
-    costOfMeals = "$ ",str('%.2f'%(costOfFries + costOfCheesePizza + costOfBurger + costOfPizza + costOfCheeseBurger + costOfDrinks)) 
-    totalCostOfFood = (costOfFries + costOfCheesePizza + costOfBurger + costOfPizza + costOfCheeseBurger + costOfDrinks)
+    costOfMeals = "$ ",str('%.2f'%(costOfFries + costOfLunchCombo + costOfBurger + costOfPizza + costOfCheeseBurger + costOfDrinks)) 
+    totalCostOfFood = (costOfFries + costOfLunchCombo + costOfBurger + costOfPizza + costOfCheeseBurger + costOfDrinks)
     costOfTax = ((totalCostOfFood)/8)
     serviceCharge = ((totalCostOfFood)/15)
     subtotalTotal = (((totalCostOfFood)/8) + ((totalCostOfFood)/15))
@@ -176,25 +175,25 @@ def restaurantPrices():
     top.geometry("300x200")
     top.title("Prices for Restaurant Menu")
     label = Label(top, text = "Prices of All Items at this Restaurant", font = "Times 14 bold")
-    label.grid(row = 0, column = 0 )
-    friesPrice = Label(top, text = "Fries - 2.50", font = "Meiryo 14 ")
+    label.grid(row = 0, column = 0)
+    friesPrice = Label(top, text = "Fries - 2.50", font = "Times 14 ")
     friesPrice.grid(row = 10, column = 0)
-    lunchPrice = Label(top, text = "Lunch Meal - 6.50", font = "Meiryo 14")
+    lunchPrice = Label(top, text = "Lunch Meal - 6.50", font = "Times 14")
     lunchPrice.grid(row = 20, column = 0)
-    burgerPrice = Label(top, text = "Burger - 4.50", font = "Meiryo 14")
+    burgerPrice = Label(top, text = "Burger - 4.50", font = "Times 14")
     burgerPrice.grid(row = 30, column = 0)
-    pizzaPrice = Label(top, text = "Pizza - 7.50", font = "Meiryo 14")
+    pizzaPrice = Label(top, text = "Pizza - 7.50", font = "Times 14")
     pizzaPrice.grid(row = 40, column = 0)
-    cheeseBurgerPrice = Label(top, text = "Cheeseburger - 5.00", font = "Meiryo 14")
+    cheeseBurgerPrice = Label(top, text = "Cheeseburger - 5.00", font = "Times 14")
     cheeseBurgerPrice.grid(row = 50, column = 0)
-    drinksPrice = Label(top, text = "Drinks - 2.00", font = "Meiryo 14")
+    drinksPrice = Label(top, text = "Drinks - 2.00", font = "Times 14")
     drinksPrice.grid(row = 60, column = 0)
     
     
 def reset():
     orderVar.set("")
     friesVar.set("")
-    cheesePizzaVar.set("")
+    lunchComboVar.set("")
     burgerVar.set("")
     pizzaVar.set("")
     cheeseBurgerVal.set("")
@@ -208,24 +207,24 @@ def reset():
 def quit():
     root.destroy()
 
-priceButton = Button(frame3, text = "PRICE", font = "Nyala 16", command = restaurantPrices)
-priceButton.grid(row = 90, column = 0)
+priceButton = Button(frame3, text = "PRICE", font = "Times 16", command = restaurantPrices)
+priceButton.grid(row = 1, column = 0)
 
-priceTotal = Button(frame3, text = "TOTAL", font = "Nyala 16", command = ref)
-priceTotal.grid(row = 90, column = 30)
+priceTotal = Button(frame3, text = "TOTAL", font = "Times 16", command = ref)
+priceTotal.grid(row = 1, column = 30)
 
-resetButton = Button(frame3, text = "RESET", font = "Nyala 16", command = reset)
-resetButton.grid(row = 90, column = 60)
+resetButton = Button(frame3, text = "RESET", font = "Times 16", command = reset)
+resetButton.grid(row = 1, column = 60)
 
-exitButton = Button(frame3, text = "EXIT", font = "Nyala 16", command = quit)
-exitButton.grid(row = 90, column = 90)
+exitButton = Button(frame3, text = "EXIT", font = "Times 16", command = quit)
+exitButton.grid(row = 1, column = 90)
 
 
 def click(event): #when you making a function there is an automatic parameter called event if you are binding it, the event we are referring to is <"Button-1">
     global scValue 
     text = event.widget.cget("text") #event.widget provides the button you just clicked, c.get() takes the text from a widget
     if text == "=":
-        if scValue.get.isDigit:
+        if scValue.get().isdigit():
             value= int(scValue.get())
         else:
             value = eval(screen.get()) #eval evaluates the expression
